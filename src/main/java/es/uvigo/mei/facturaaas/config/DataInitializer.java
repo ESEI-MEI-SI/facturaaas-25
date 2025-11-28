@@ -2,20 +2,26 @@ package es.uvigo.mei.facturaaas.config;
 
 import es.uvigo.mei.facturaaas.model.*;
 import es.uvigo.mei.facturaaas.repository.*;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import java.math.BigDecimal;
 
 @Component
-@RequiredArgsConstructor
 public class DataInitializer implements CommandLineRunner {
     
-    private final UsuarioRepository usuarioRepository;
-    private final TipoIVARepository tipoIVARepository;
-    private final FormaPagoRepository formaPagoRepository;
-    private final PasswordEncoder passwordEncoder;
+    @Autowired
+    private UsuarioRepository usuarioRepository;
+    
+    @Autowired
+    private TipoIVARepository tipoIVARepository;
+    
+    @Autowired
+    private FormaPagoRepository formaPagoRepository;
+    
+    @Autowired
+    private PasswordEncoder passwordEncoder;
     
     @Override
     public void run(String... args) {
