@@ -2,6 +2,68 @@
 
 Backend desarrollado en Spring Boot para la gestión de facturas FACTURAaaS.
 
+## Creación del Proyecto con Spring Initializr
+
+Para crear este proyecto desde cero, utiliza [Spring Initializr](https://start.spring.io/) con la siguiente configuración:
+
+### Configuración Base
+
+| Parámetro | Valor |
+|-----------|-------|
+| **Project** | Maven |
+| **Language** | Java |
+| **Spring Boot** | 3.2.0 |
+| **Group** | es.uvigo.mei |
+| **Artifact** | facturaaas |
+| **Name** | FACTURAaaS Backend |
+| **Description** | Backend para gestión de facturas - FACTURAaaS |
+| **Package name** | es.uvigo.mei.facturaaas |
+| **Packaging** | Jar |
+| **Java** | 17 |
+
+### Dependencias a Seleccionar
+
+- **Spring Web** - Para crear APIs REST
+- **Spring Data JPA** - Para persistencia con JPA/Hibernate
+- **Spring Security** - Para autenticación y autorización
+- **Validation** - Para validación de beans con Jakarta Validation
+- **H2 Database** - Base de datos en memoria para desarrollo
+- **MySQL Driver** - Driver para base de datos MySQL (producción)
+- **Lombok** - Para reducir código boilerplate
+
+### Dependencias Adicionales (añadir manualmente al pom.xml)
+
+Después de generar el proyecto, añade las siguientes dependencias para JWT:
+
+```xml
+<!-- JWT -->
+<dependency>
+    <groupId>io.jsonwebtoken</groupId>
+    <artifactId>jjwt-api</artifactId>
+    <version>0.12.3</version>
+</dependency>
+<dependency>
+    <groupId>io.jsonwebtoken</groupId>
+    <artifactId>jjwt-impl</artifactId>
+    <version>0.12.3</version>
+    <scope>runtime</scope>
+</dependency>
+<dependency>
+    <groupId>io.jsonwebtoken</groupId>
+    <artifactId>jjwt-jackson</artifactId>
+    <version>0.12.3</version>
+    <scope>runtime</scope>
+</dependency>
+```
+
+### Enlace Directo
+
+Puedes usar este enlace para generar el proyecto con la configuración base:
+
+[👉 Generar proyecto en Spring Initializr](https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.2.0&packaging=jar&jvmVersion=17&groupId=es.uvigo.mei&artifactId=facturaaas&name=FACTURAaaS%20Backend&description=Backend%20para%20gesti%C3%B3n%20de%20facturas%20-%20FACTURAaaS&packageName=es.uvigo.mei.facturaaas&dependencies=web,data-jpa,security,validation,h2,mysql,lombok)
+
+---
+
 ## Tecnologías
 
 - **Java 17**
