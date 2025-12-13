@@ -2,11 +2,11 @@
 
 ## 📋 Descripción General
 
-Este documento describe la **arquitectura, componentes principales y decisiones técnicas** del sistema backend **FACTURAaaS**, una aplicación SaaS para la gestión de facturas desarrollada con **Spring Boot 3.2.0** y **Java 17**.
+Este documento describe la **arquitectura, componentes principales y decisiones técnicas** del sistema backend **FACTURAaaS**, una aplicación SaaS para la gestión de facturas desarrollada con **Spring Boot 3.5.8** y **Java 17**.
 
 ### Tecnologías Principales
 
-* **Spring Boot 3.2.0**: Framework principal
+* **Spring Boot 3.5.8**: Framework principal
 * **Spring Core**: Gestión de dependencias e inversión de control (IoC)
 * **Spring MVC**: Exposición de endpoints RESTful
 * **Spring Data JPA**: Acceso a datos y persistencia

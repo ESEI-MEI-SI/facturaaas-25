@@ -12,7 +12,7 @@ Para crear este proyecto desde cero, utiliza [Spring Initializr](https://start.s
 |-----------|-------|
 | **Project** | Maven |
 | **Language** | Java |
-| **Spring Boot** | 3.2.0 |
+| **Spring Boot** | 3.5.8 |
 | **Group** | es.uvigo.mei |
 | **Artifact** | facturaaas |
 | **Name** | FACTURAaaS Backend |
@@ -60,14 +60,14 @@ Después de generar el proyecto, añade las siguientes dependencias para JWT:
 
 Puedes usar este enlace para generar el proyecto con la configuración base:
 
-[👉 Generar proyecto en Spring Initializr](https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.2.0&packaging=jar&jvmVersion=17&groupId=es.uvigo.mei&artifactId=facturaaas&name=FACTURAaaS%20Backend&description=Backend%20para%20gesti%C3%B3n%20de%20facturas%20-%20FACTURAaaS&packageName=es.uvigo.mei.facturaaas&dependencies=web,data-jpa,security,validation,h2,mysql,lombok)
+[👉 Generar proyecto en Spring Initializr](https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.5.8&packaging=jar&jvmVersion=17&groupId=es.uvigo.mei&artifactId=facturaaas&name=FACTURAaaS%20Backend&description=Backend%20para%20gesti%C3%B3n%20de%20facturas%20-%20FACTURAaaS&packageName=es.uvigo.mei.facturaaas&dependencies=web,data-jpa,security,validation,h2,mysql,lombok)
 
 ---
 
 ## Tecnologías
 
 - **Java 17**
-- **Spring Boot 3.2.0**
+- **Spring Boot 3.5.8**
 - **Spring Data JPA** - Persistencia de datos
 - **Spring Security** - Autenticación y autorización
 - **JWT** - Tokens de autenticación

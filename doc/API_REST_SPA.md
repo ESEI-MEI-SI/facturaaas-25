@@ -328,4 +328,4 @@ Valores válidos: `PARTICULAR`, `AUTONOMO`, `SOCIEDAD_LIMITADA`, `SOCIEDAD_ANONI
 ---
 
 **Actualización**: 5 de diciembre de 2025  
-**Versión**: 1.0.0 | **Spring Boot**: 3.2.0 | **Java**: 17
+**Versión**: 1.0.0 | **Spring Boot**: 3.5.8 | **Java**: 17
