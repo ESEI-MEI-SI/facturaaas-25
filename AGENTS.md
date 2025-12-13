@@ -608,11 +608,8 @@ curl -H "Authorization: Bearer $TOKEN" \
 
 - **`README.md`**: Guía de inicio rápido y configuración
 - **`historias.md`**: Historias de usuario del proyecto
-- **`SEGURIDAD_RECURSOS.md`**: Documentación detallada de seguridad basada en recursos
-- **`FORMAPAGO_USUARIO.md`**: Documentación del cambio de FormaPago a entidad de usuario
-- **`CAMBIOS_REALIZADOS.md`**: Historial de cambios y refactorizaciones
 - **`API_TESTS.md`**: Scripts de prueba con curl
-- **`test_api.sh`**: Script automatizado de pruebas
+- **`test_api.sh`**: Script automatizado de pruebas manuales
 
 ---
 
