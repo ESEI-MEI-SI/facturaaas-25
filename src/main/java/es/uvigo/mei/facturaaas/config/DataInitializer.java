@@ -4,11 +4,13 @@ import es.uvigo.mei.facturaaas.model.*;
 import es.uvigo.mei.facturaaas.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Profile;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import java.math.BigDecimal;
 
 @Component
+@Profile("!prod")  // Solo se ejecuta si NO está activo el perfil "prod"
 public class DataInitializer implements CommandLineRunner {
     
     @Autowired

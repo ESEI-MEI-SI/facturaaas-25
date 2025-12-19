@@ -1,6 +1,6 @@
 # AGENTS - Arquitectura y Componentes del Backend FACTURAaaS
 
-## 📋 Descripción General
+## Descripción General
 
 Este documento describe la **arquitectura, componentes principales y decisiones técnicas** del sistema backend **FACTURAaaS**, una aplicación SaaS para la gestión de facturas desarrollada con **Spring Boot 3.5.8** y **Java 17**.
 
@@ -18,7 +18,7 @@ Este documento describe la **arquitectura, componentes principales y decisiones 
 
 ---
 
-## 🏗️ Arquitectura del Proyecto
+## Arquitectura del Proyecto
 
 ### Estructura en Capas
 
@@ -47,7 +47,7 @@ HTTP Request → Controller → Service → Repository → Database
 
 ---
 
-## 🔐 Seguridad
+## Seguridad
 
 ### Autenticación: JWT (JSON Web Tokens)
 
@@ -88,7 +88,7 @@ public ResponseEntity<ClienteDTO> obtenerPorId(@PathVariable Long id) {
 
 ---
 
-## 📦 Modelo de Datos
+## Modelo de Datos
 
 ### Entidades JPA
 
@@ -163,7 +163,7 @@ public ResponseEntity<ClienteDTO> obtenerPorId(@PathVariable Long id) {
 
 ---
 
-## 🎯 Componentes por Capa
+## Componentes por Capa
 
 ### 1. Controladores (Controllers)
 
@@ -347,7 +347,7 @@ List<FormaPago> findByUsuarioIdAndActivaTrue(Long usuarioId);
 
 ---
 
-## 🔄 Flujos de Datos Principales
+## Flujos de Datos Principales
 
 ### 1. Autenticación (Login)
 
@@ -416,7 +416,7 @@ FacturaRepository.save()
 Cliente → POST /api/facturas/{id}/generar-pagos
    ↓
 FacturaService.generarPagos(id)
-   ↓ obtener factura y forma pago
+   ↓ obtener factura y forma de pago
    ↓ eliminar pagos existentes
    ↓ crear N pagos según numeroPagos
    ↓ calcular fechas según periodicidadDias
@@ -427,7 +427,7 @@ PagoRepository.saveAll()
 
 ---
 
-## 📝 Decisiones Arquitectónicas
+## Decisiones Arquitectónicas
 
 ### 1. FormaPago: De Global a Específica de Usuario
 
@@ -509,7 +509,7 @@ private String generarNumeroFactura(Integer ejercicio) {
 
 ---
 
-## 🗄️ Base de Datos
+## Base de Datos
 
 ### Desarrollo: H2 In-Memory
 
@@ -538,7 +538,7 @@ spring.jpa.hibernate.ddl-auto=validate
 
 ---
 
-## 🚀 Ejecución y Despliegue
+## Ejecución y Despliegue
 
 ### Desarrollo
 
@@ -570,7 +570,7 @@ java -jar target/facturaaas-0.0.1-SNAPSHOT.jar --spring.profiles.active=prod
 
 ---
 
-## 🧪 Testing
+## Testing
 
 ### Usuarios de Prueba
 
@@ -604,7 +604,7 @@ curl -H "Authorization: Bearer $TOKEN" \
 
 ---
 
-## 📚 Documentación Relacionada
+## Documentación Relacionada
 
 - **`README.md`**: Guía de inicio rápido y configuración
 - **`historias.md`**: Historias de usuario del proyecto
@@ -613,7 +613,7 @@ curl -H "Authorization: Bearer $TOKEN" \
 
 ---
 
-## 🔮 Funcionalidades Pendientes
+## Funcionalidades Pendientes
 
 ### Sprint 2 (Propuestas)
 
@@ -649,7 +649,7 @@ curl -H "Authorization: Bearer $TOKEN" \
 
 ---
 
-## 📊 Métricas del Proyecto
+## Métricas del Proyecto
 
 **Estado actual** (30 de octubre de 2025):
 
@@ -660,12 +660,12 @@ curl -H "Authorization: Bearer $TOKEN" \
 - **DTOs**: 11+
 - **Endpoints REST**: ~35
 - **Líneas de código**: ~5000+
-- **Compilación**: ✅ Exitosa
+- **Compilación**: Exitosa
 - **Historias implementadas**: H1-H17
 
 ---
 
-## 🤝 Contribución y Mantenimiento
+## Contribución y Mantenimiento
 
 ### Extensión del Sistema
 
@@ -689,16 +689,16 @@ Para añadir una nueva entidad con seguridad basada en recursos:
 
 ### Buenas Prácticas
 
-- ✅ Usar DTOs para exponer datos (no entidades directamente)
-- ✅ Validar entrada con anotaciones de Bean Validation
-- ✅ Aplicar `@Transactional` en métodos de servicio que modifican datos
-- ✅ Usar `ResponseEntity<T>` para control explícito de respuestas HTTP
-- ✅ Documentar decisiones arquitectónicas importantes
-- ✅ Mantener consistencia en naming conventions
-- ✅ Aplicar seguridad a todos los endpoints sensibles
+- Usar DTOs para exponer datos (no entidades directamente)
+- Validar entrada con anotaciones de Bean Validation
+- Aplicar `@Transactional` en métodos de servicio que modifican datos
+- Usar `ResponseEntity<T>` para control explícito de respuestas HTTP
+- Documentar decisiones arquitectónicas importantes
+- Mantener consistencia en naming conventions
+- Aplicar seguridad a todos los endpoints sensibles
 
 ---
 
 **Documento actualizado**: 30 de octubre de 2025  
 **Versión del proyecto**: 1.0.0-SNAPSHOT  
-**Estado**: ✅ Producción-ready (falta testing exhaustivo)
+**Estado**: Producción-ready (falta testing exhaustivo)
