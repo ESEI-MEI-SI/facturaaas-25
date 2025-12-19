@@ -332,7 +332,7 @@ npm run build
 1. Ir a **Dashboard → New → Web Service**
 2. Conectar repositorio Git o subir código
 3. Configurar:
-   - **Name**: `facturaaas-api`
+   - **Name**: `facturaaas-25`
    - **Region**: Misma que la BD
    - **Branch**: `main` o `master`
    - **Runtime**: `Java` o `Docker`
@@ -358,7 +358,7 @@ CORS_ALLOWED_ORIGINS=https://tu-frontend.onrender.com
 1. Ir a **Dashboard → New → Static Site**
 2. Conectar repositorio del frontend React
 3. Configurar:
-   - **Name**: `facturaaas-web`
+   - **Name**: `facturaaas-react-25`
    - **Branch**: `main`
    - **Build Command**: `npm install && npm run build`
    - **Publish Directory**: `dist` (Vite) o `build` (CRA)
@@ -366,9 +366,9 @@ CORS_ALLOWED_ORIGINS=https://tu-frontend.onrender.com
 4. **Variables de Entorno** (para el build de React):
 
 ```
-VITE_API_URL=https://facturaaas-api.onrender.com
+VITE_API_URL=https://facturaaas-25.onrender.com
 # o para Create React App:
-REACT_APP_API_URL=https://facturaaas-api.onrender.com
+REACT_APP_API_URL=https://facturaaas-25.onrender.com
 ```
 
 5. **Configurar Redirecciones para SPA** (crear archivo `_redirects` en `public/`):
@@ -389,7 +389,7 @@ O en Render, configurar **Rewrite Rules**:
 Una vez desplegado el frontend, actualizar la variable `CORS_ALLOWED_ORIGINS` del backend con la URL real del frontend:
 
 ```
-CORS_ALLOWED_ORIGINS=https://facturaaas-web.onrender.com
+CORS_ALLOWED_ORIGINS=https://facturaaas-react-25.onrender.com
 ```
 
 ---
