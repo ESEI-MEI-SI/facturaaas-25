@@ -208,24 +208,48 @@ public class HomeController {
 
 | Variable | Descripción | Ejemplo |
 |----------|-------------|---------|
-| `DATABASE_URL` | URL de conexión PostgreSQL | `jdbc:postgresql://host:5432/db?user=x&password=y` |
+| `DATABASE_URL` | URL de conexión PostgreSQL (sin credenciales) | `jdbc:postgresql://host:5432/facturaaas` |
+| `DATABASE_USERNAME` | Usuario de la base de datos | `facturaaas_user` |
+| `DATABASE_PASSWORD` | Contraseña de la base de datos | `password123` |
 | `JWT_SECRET` | Clave secreta para tokens JWT (mín. 256 bits) | `MiClaveSecretaMuyLargaYSegura...` |
 | `ADMIN_PASSWORD` | Contraseña inicial del admin | `AdminPassword123!` |
 | `CORS_ALLOWED_ORIGINS` | URLs del frontend permitidas | `https://mi-app.onrender.com` |
 | `SPRING_PROFILES_ACTIVE` | Perfil de Spring Boot | `prod` |
 
-### Variables Opcionales
+### Configuración de BD en Render
 
-| Variable | Descripción | Valor por defecto |
-|----------|-------------|-------------------|
-| `JWT_EXPIRATION` | Tiempo de expiración del token (ms) | `86400000` (24h) |
-| `PORT` | Puerto del servidor | `8080` |
+Render proporciona las credenciales de PostgreSQL de dos formas:
 
-### Generación de JWT_SECRET
+1. **Internal Database URL**: URL completa con credenciales embebidas
+   ```
+   postgres://user:password@host:5432/database
+   ```
+   
+2. **Credenciales separadas**: En el panel de la BD, sección "Connections"
+   - **Host**: `dpg-xxx.render.com`
+   - **Database**: `facturaaas`
+   - **Username**: `facturaaas_user`
+   - **Password**: `xxxxxxxx`
 
-```bash
-# Generar una clave segura de 256 bits (base64)
-openssl rand -base64 32
+Para Spring Boot, convertir la URL de Render al formato JDBC:
+```
+# Formato Render (postgres://)
+postgres://user:pass@host:5432/db
+
+# Formato JDBC (jdbc:postgresql://)
+jdbc:postgresql://host:5432/db
+```
+
+### Variables de Entorno en Render
+
+```
+SPRING_PROFILES_ACTIVE=prod
+DATABASE_URL=jdbc:postgresql://dpg-xxx.render.com:5432/facturaaas
+DATABASE_USERNAME=facturaaas_user
+DATABASE_PASSWORD=<contraseña-de-render>
+JWT_SECRET=<tu-clave-secreta-256-bits>
+ADMIN_PASSWORD=<contraseña-segura-admin>
+CORS_ALLOWED_ORIGINS=https://tu-frontend.onrender.com
 ```
 
 ---
@@ -298,7 +322,7 @@ npm run build
    - **Name**: `facturaaas-db`
    - **Database**: `facturaaas`
    - **User**: (generado automáticamente)
-   - **Region**: Frankfurt (EU) o la más cercana
+   - **Region**: (valor por defecto)
    - **Plan**: Free (para pruebas) o según necesidades
 3. Crear y esperar aprovisionamiento
 4. Copiar **Internal Database URL** para el backend
@@ -319,7 +343,9 @@ npm run build
 
 ```
 SPRING_PROFILES_ACTIVE=prod
-DATABASE_URL=<Internal Database URL de Render>
+DATABASE_URL=jdbc:postgresql://dpg-xxx.render.com:5432/facturaaas
+DATABASE_USERNAME=facturaaas_user
+DATABASE_PASSWORD=<contraseña-de-render>
 JWT_SECRET=<tu-clave-secreta-256-bits>
 ADMIN_PASSWORD=<contraseña-segura-admin>
 CORS_ALLOWED_ORIGINS=https://tu-frontend.onrender.com

@@ -3,7 +3,7 @@
 # ================================
 
 # Etapa 1: Construcción
-FROM eclipse-temurin:17-jdk-alpine as build
+FROM eclipse-temurin:17-jdk-alpine AS build
 WORKDIR /app
 
 # Copiar archivos de Maven
